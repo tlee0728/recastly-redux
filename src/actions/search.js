@@ -11,7 +11,7 @@ var handleVideoSearch = (q) => {
     searchYouTube({
       key: YOUTUBE_API_KEY,
       q: q
-    }, dispatch({ type: 'DECREMENT' }));
+    }, dispatch({ type: 'RESET' }));
   };
 };
 
