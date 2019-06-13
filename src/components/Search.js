@@ -11,10 +11,12 @@ class Search extends React.Component {
   }
 
   handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
+    e.preventDefault();
+    // this.props.handleSearchInputChange(e.target.value);    
     this.setState({
       value: e.target.value
     });
+    console.log(this.state.value);
   }
 
   render() {
@@ -26,8 +28,9 @@ class Search extends React.Component {
           value={this.state.value}
           onChange={this.handleInputChange.bind(this)}
         />
-        <button className="btn hidden-sm-down">
+        <button onClick={() => this.props.handleSearchInputChange(this.state.value)} className="btn hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>
+
         </button>
       </div>
     );
